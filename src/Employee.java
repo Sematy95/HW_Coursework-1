@@ -6,7 +6,7 @@ public class Employee {
     private int department;
     private int salary;
     private static int counter;
-    private int ID = 0;
+    private int id = 0;
 
 
 
@@ -14,8 +14,8 @@ public class Employee {
         this.name = name;
         this.department = department;
         this.salary = salary;
-        this.ID = ID;
-        ID = ++counter;
+        this.id = ++counter;
+
     }
 
     @Override
@@ -24,7 +24,7 @@ public class Employee {
                 "ФИО: " + name +
                         ", отдел: " + department +
                         ", зарплата: " + salary + " рублей" +
-                        ", ID сотрудника: " + ID;
+                        ", id сотрудника: " + id;
     }
 
     public String getName() {
@@ -39,8 +39,8 @@ public class Employee {
         return salary;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
     public void setSalary(int salary) {
