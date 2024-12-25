@@ -38,14 +38,17 @@ public class EmployeeBook {
     }
 
     public void printAllEmployees() {
+        //Метод для выведения всех сотрудников
         System.out.println("Список сотрудников:");
         for (int i = 0; i < employees.length; i++)
             if (employees[i] != null) System.out.println(employees[i]);
     }
 
     public void findMaxSalaryEmployee() {
+        //Метод для нахождения сотрудника с максимальной зарплатой
         int maxSalary = Integer.MIN_VALUE;
         Employee employee = null;
+        //Чтобы не поймать NullPointer, в условии цикла проверка на null
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
             if (maxSalary < employees[i].getSalary()) maxSalary = employees[i].getSalary();
         }
@@ -59,6 +62,7 @@ public class EmployeeBook {
     }
 
     public void findMinSalaryEmployee() {
+        //Метод для нахождения сотрудника с минимальной зарплатой
         int minSalary = Integer.MAX_VALUE;
         Employee employee = null;
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
@@ -74,6 +78,7 @@ public class EmployeeBook {
     }
 
     public void showSalarySum() {
+        //Метод для нахождения суммы зарплат всех сотрудников
         int totalSalary = 0;
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
 
@@ -83,6 +88,7 @@ public class EmployeeBook {
     }
 
     public void showSalaryAverage() {
+        //Метод для нахождения средней арифметической зарплат всех сотрудников
         int totalSalary = 0;
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
             totalSalary += employees[i].getSalary();
@@ -92,6 +98,7 @@ public class EmployeeBook {
     }
 
     public void increaseSalaryForAll(int percent) {
+        //Метод для увеличения зарплат всех сотрудников на заданный процент
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
             employees[i].setSalary(employees[i].getSalary() + employees[i].getSalary() / 100 * percent);
         }
@@ -99,6 +106,7 @@ public class EmployeeBook {
     }
 
     public void findMinSalaryEmployeeInDepartment(int department) {
+        //Метод для нахождения сотрудника с минимальной зарплатой в заданном отделе
         int minSalary = 0;
         Employee employee = null;
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
@@ -122,6 +130,7 @@ public class EmployeeBook {
     }
 
     public void findMaxSalaryEmployeeInDepartment(int department) {
+        //Метод для нахождения сотрудника с максимальной зарплатой в заданном отделе
         int maxSalary = 0;
         Employee employee = null;
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
@@ -145,6 +154,7 @@ public class EmployeeBook {
     }
 
     public void showSalarySumInDepartment(int department) {
+        //Метод для нахождения суммы зарплат всех сотрудников в заданном отделе
         int totalSalary = 0;
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
             if (employees[i].getDepartment() == department) totalSalary += employees[i].getSalary();
@@ -153,6 +163,7 @@ public class EmployeeBook {
     }
 
     public void showSalaryAverageDep(int department) {
+        //Метод для нахождения средней арифметической зарплат всех сотрудников в заданном отделе
         int totalSalary = 0;
         int counter = 0;
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
@@ -166,6 +177,7 @@ public class EmployeeBook {
     }
 
     public void increaseSalaryForDepartment(int percent, int department) {
+        //Метод для увеличения зарплаты всех сотрудников на заданный процент в заданном отделе
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
             if (employees[i].getDepartment() == department) {
                 employees[i].setSalary(employees[i].getSalary() + employees[i].getSalary() / 100 * percent);
@@ -175,6 +187,7 @@ public class EmployeeBook {
     }
 
     public void printAllEmployeesInDepartment(int department) {
+        //Метод для выведения всех сотрудников в заданном отделе
         System.out.println("Список сотрудников отдела " + department + " :");
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
             if (employees[i].getDepartment() == department) {
@@ -184,6 +197,7 @@ public class EmployeeBook {
     }
 
     public void showAllWithLowerSalary(int limit) {
+        //Метод для выведения всех сотрудников с зарплатой ниже заданной
         System.out.println("Список сотрудников c ЗП меньше " + limit + " рублей:");
         int counter = 0;
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
@@ -196,6 +210,7 @@ public class EmployeeBook {
     }
 
     public void showAllWithUpperSalary(int limit) {
+        //Метод для выведения всех сотрудников с зарплатой выше заданной
         System.out.println("Список сотрудников c ЗП больше " + limit + " рублей:");
         int counter = 0;
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
@@ -208,6 +223,7 @@ public class EmployeeBook {
     }
 
     public boolean addNewEmployee(String name, int department, int salary) {
+        //Метод для добавления нового сотрудника
         System.out.println("Добавление нового сотрудника");
         boolean isNull = false;
         for (int i = 0; i < employees.length; i++) {
@@ -226,6 +242,7 @@ public class EmployeeBook {
     }
 
     public boolean deleteEmployee(int id) {
+        //Метод для удаления сотрудника по заданному id
         System.out.println("Удаление сотрудника по id");
         boolean isExist = false;
         for (int i = 0; i < employees.length; i++) {
