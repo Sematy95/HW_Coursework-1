@@ -2,12 +2,11 @@ import java.util.Objects;
 
 public class Employee {
 
-    private final String name;
+    private String name;
     private int department;
     private int salary;
     private static int counter;
     private int id = 0;
-
 
 
     public Employee(String name, int department, int salary) {
@@ -41,6 +40,14 @@ public class Employee {
 
     public int getId() {
         return id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setSalary(int salary) {
